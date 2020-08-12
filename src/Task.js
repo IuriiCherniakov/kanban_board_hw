@@ -3,7 +3,7 @@ import {Col, Card, CardBody, Button, Alert} from "reactstrap";
 
 function Task(props) {
     const {task, changeTaskStatus} = props
-const alertColors = ['success', 'warning', 'danger']
+    const alertColors = ['success', 'warning', 'danger']
     return (
         <div>
             <Col>
@@ -13,6 +13,13 @@ const alertColors = ['success', 'warning', 'danger']
                         {task.name}
                         <Alert color={alertColors[task.priority]}>
                             {task.priority}
+                            {task.priority !== 2 &&
+                            <Button size='sm' onClick={() => changeTaskStatus(task.id, 'up')}>↑</Button>}
+
+                            {' '}
+                            {task.priority !== 0 &&
+                            <Button size='sm' onClick={() => changeTaskStatus(task.id, 'down')}>↓</Button>}
+
 
                         </Alert>
                     </CardBody>

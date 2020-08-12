@@ -3,13 +3,16 @@ import {Col} from "reactstrap";
 import Task from "./Task";
 
 function Column(props) {
-    const {tasks, title, changeTaskStatus} = props
+    const {tasks, changeTaskStatus, column, addNewTask} = props
 
     return (
         <div>
             <Col>
-                <h3>{title}</h3>
-                {tasks.filter(el=> el.status === title).map(el => <Task changeTaskStatus={changeTaskStatus} task={el}/>)}
+                <h3>{column.title}</h3>
+                {tasks.
+                filter(el=> el.status === column.status)
+                    .sort((a,b)=>b.priority - a.priority).
+                map(el => <Task changeTaskStatus={changeTaskStatus} task={el} />)}
 
 
             </Col>
