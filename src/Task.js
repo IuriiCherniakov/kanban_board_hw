@@ -2,7 +2,7 @@ import React from 'react';
 import {Col, Card, CardBody, Button, Alert} from "reactstrap";
 
 function Task(props) {
-    const {task, changeTaskStatus} = props
+    const {task, changeTaskStatus, deleteTask} = props
     const alertColors = ['success', 'warning', 'danger']
     return (
         <div>
@@ -11,6 +11,7 @@ function Task(props) {
                 <Card>
                     <CardBody>
                         {task.name}
+                        <Button onClick={()=>deleteTask(task.id)} size='sm'>Delete</Button>
                         <Alert color={alertColors[task.priority]}>
                             {task.priority}
                             {task.priority !== 2 &&
