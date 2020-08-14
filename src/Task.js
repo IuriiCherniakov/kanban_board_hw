@@ -26,7 +26,7 @@ function Task(props) {
                     </CardBody>
                     <CardBody>
                         {task.status !== 'todo' && <Button onClick={() => changeTaskStatus(task.id, 'left')}>←</Button>}
-                        {task.status !== 'done' &&
+                        {task.status !== 'do again' &&
                         <Button onClick={() => changeTaskStatus(task.id, 'right')}>→</Button>}
 
 

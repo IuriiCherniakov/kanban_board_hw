@@ -11,7 +11,7 @@ function App() {
         {id: Math.random(), name: 'Second', priority: 1, status: 'progress'},
         {id: Math.random(), name: 'Third', priority: 2, status: 'review'},
         {id: Math.random(), name: 'Fourth', priority: 1, status: 'todo'},
-        {id: Math.random(), name: 'Fith', priority: 1, status: 'do again'},
+        {id: Math.random(), name: 'Fifth', priority: 1, status: 'do again'},
     ]
 
     const columnList = [
@@ -25,7 +25,7 @@ function App() {
 
     const [tasks, setTasks] = useState(taskList);
     const [columns, setColumns] = useState(columnList);
-    const statuses = ['todo', 'progress', 'review', 'done']
+    const statuses = ['todo', 'progress', 'review', 'done', 'do again' ]
     const taskPriority = [0, 1, 2];
 
 const addNewColumn = (title) => {
